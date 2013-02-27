@@ -93,19 +93,19 @@
 	
 		this.handleMsgPut = function(req, res) {
 			//console.log("In handleMsgPut");
-			if ((req.query.to == undefined) || (req.query.to == "")) {
+			if ((req.query.to === undefined) || (req.query.to === "")) {
 				var body = [{status:"ERROR",msg:"Missing to parameter"}];
 				res.contentType('json');
 				res.send(JSON.stringify(body), 400);
 				return;
 			}
-			if ((req.query.from == undefined) || (req.query.from == "")) {
+			if ((req.query.from === undefined) || (req.query.from === "")) {
 				var body = [{status:"ERROR",msg:"Missing from parameter"}];
 				res.contentType('json');
 				res.send(JSON.stringify(body), 400);				
 				return;
 			}
-			if (req.query.msg == undefined) {
+			if (req.query.msg === undefined) {
 				var body = [{status:"ERROR",msg:"Missing msg parameter"}];
 				res.contentType('json');
 				res.send(JSON.stringify(body), 400);				
@@ -153,7 +153,7 @@
 		};
 		this.handleMsgGet = function(req,res) {
 			//console.log("In handleMsgGet");
-			if (req.query.user == undefined) {
+			if (req.query.user === undefined) {
 				var body = [{status:"ERROR",msg:"Missing user parameter"}];
 				res.contentType('json');
 				res.send(JSON.stringify(body), 400);
@@ -183,7 +183,7 @@
 			}
 		};
         this.handleMsgFlush = function(req,res) {
-        	if (req.query.user == undefined) {
+        	if (req.query.user === undefined) {
         		var body = [{status:"ERROR",msg:"Missing user parameter"}];
 				res.contentType('json');
 				res.send(JSON.stringify(body), 400);
@@ -205,8 +205,8 @@
 			}
 		};
         this.handleLogin = function(req,res) {
-        	if (req.query.user == undefined) {
-        		var body = [{status:"ERROR",msg:"Missing user parameter"}];
+            if (req.query.user == undefined) {
+            var body = [{status:"ERROR",msg:"Missing user parameter"}];
 				res.contentType('json');
 				res.send(JSON.stringify(body), 400);
 				return;
@@ -229,7 +229,7 @@
 			}
 	    };
 		this.handleAddQueue = function(req, res) {
-			if (req.query.name == undefined) {
+			if (req.query.name === undefined) {
         		var body = [{status:"ERROR",msg:"Missing name parameter"}];
 				res.contentType('json');
 				res.send(JSON.stringify(body), 400);
